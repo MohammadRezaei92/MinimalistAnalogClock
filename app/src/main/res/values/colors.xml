@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#FAFAFA</color>
+    <color name="colorAccent">#FFFFFF</color>
+
+
+    <color name="white">#FFFFFF</color>
+    <color name="red">#F44336</color>
+    <color name="pink">#E91E63</color>
+    <color name="purple">#9C27B0</color>
+    <color name="deep_purple">#673AB7</color>
+    <color name="indigo">#3F51B5</color>
+    <color name="blue">#2196F3</color>
+    <color name="light_blue">#03A9F4</color>
+    <color name="cyan">#00BCD4</color>
+    <color name="teal">#009688</color>
+    <color name="green">#4CAF50</color>
+    <color name="light_green">#8BC34A</color>
+    <color name="lime">#CDDC39</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="amber">#FFC107</color>
+    <color name="orange">#FF9800</color>
+    <color name="deep_orange">#FF5722</color>
+    <color name="brown">#795548</color>
+    <color name="grey">#9E9E9E</color>
+    <color name="blue_grey">#607D8B</color>
+    <color name="black">#000000</color>
+
+
+    <integer-array name="colors">
+        <item name="white">@color/white</item>
+        <item name="white">@color/white</item>
+        <item name="red">@color/red</item>
+        <item name="pink">@color/pink</item>
+        <item name="purple">@color/purple</item>
+        <item name="deep_purple">@color/deep_purple</item>
+        <item name="indigo">@color/indigo</item>
+        <item name="blue">@color/blue</item>
+        <item name="light_blue">@color/light_blue</item>
+        <item name="cyan">@color/cyan</item>
+        <item name="teal">@color/teal</item>
+        <item name="green">@color/green</item>
+        <item name="light_green">@color/light_green</item>
+        <item name="lime">@color/lime</item>
+        <item name="yellow">@color/yellow</item>
+        <item name="amber">@color/amber</item>
+        <item name="orange">@color/orange</item>
+        <item name="deep_orange">@color/deep_orange</item>
+        <item name="brown">@color/brown</item>
+        <item name="grey">@color/grey</item>
+        <item name="blue_grey">@color/blue_grey</item>
+        <item name="black">@color/black</item>
+        <item name="black">@color/black</item>
+    </integer-array>
+</resources>

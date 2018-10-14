@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
+
+    <ir.co.yalda.minimalistanalogclock.Clock
+        android:id="@+id/clock"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/add_button"
+        android:layout_below="@id/clock">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/clock"
+            android:paddingLeft="@dimen/horizontalPadding"
+            android:paddingRight="@dimen/horizontalPadding"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtConfig"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="20sp"
+                android:textColor="?android:textColorSecondary"
+                android:text="@string/configure" />
+
+            <TextView
+                android:id="@+id/txtHourDotColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="?android:textColorPrimary"
+                android:text="Hour dots color" />
+
+
+            <ir.co.yalda.minimalistanalogclock.ColorSeekBar
+                android:id="@+id/pickerHourDotColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:colorSeeds="@array/colors"/>
+
+            <TextView
+                android:id="@+id/txtMinuteDotColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="?android:textColorPrimary"
+                android:text="Minute dots color" />
+
+            <ir.co.yalda.minimalistanalogclock.ColorSeekBar
+                android:id="@+id/pickerMinuteDotColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:colorSeeds="@array/colors"/>
+
+            <TextView
+                android:id="@+id/txtHandsColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="?android:textColorPrimary"
+                android:text="Hands color" />
+
+            <ir.co.yalda.minimalistanalogclock.ColorSeekBar
+                android:id="@+id/pickerHandsColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:colorSeeds="@array/colors"/>
+
+            <TextView
+                android:id="@+id/txtSecondDotColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="?android:textColorPrimary"
+                android:text="Second dot color" />
+
+            <ir.co.yalda.minimalistanalogclock.ColorSeekBar
+                android:id="@+id/pickerSecondDotColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:colorSeeds="@array/colors"/>
+
+            <TextView
+                android:id="@+id/txtDatePrimaryColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="?android:textColorPrimary"
+                android:text="Date primary color" />
+
+            <ir.co.yalda.minimalistanalogclock.ColorSeekBar
+                android:id="@+id/pickerDatePrimaryColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:colorSeeds="@array/colors"/>
+
+            <TextView
+                android:id="@+id/txtDateSecondaryColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="?android:textColorPrimary"
+                android:text="Date secondary color" />
+
+            <ir.co.yalda.minimalistanalogclock.ColorSeekBar
+                android:id="@+id/pickerDateSecondaryColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:colorSeeds="@array/colors"/>
+
+            <TextView
+                android:id="@+id/txtCenterCirclePrimaryColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="?android:textColorPrimary"
+                android:text="Center circle primary color" />
+
+            <ir.co.yalda.minimalistanalogclock.ColorSeekBar
+                android:id="@+id/pickerCenterCirclePrimaryColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:colorSeeds="@array/colors"/>
+
+            <TextView
+                android:id="@+id/txtCenterCircleSecondaryColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="?android:textColorPrimary"
+                android:text="Center circle secondary color" />
+
+            <ir.co.yalda.minimalistanalogclock.ColorSeekBar
+                android:id="@+id/pickerCenterCircleSecondaryColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:colorSeeds="@array/colors"/>
+
+            <TextView
+                android:id="@+id/txtOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="?android:textColorPrimary"
+                android:text="Other" />
+
+            <CheckBox
+                android:id="@+id/chShowDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Show date"/>
+
+            <CheckBox
+                android:id="@+id/chShowSecond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Show second dot"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
+        android:textColor="@color/black"
+        android:layout_margin="0dp"
+        android:text="@string/add_widget" />
+
+</RelativeLayout>

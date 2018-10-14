@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MinimalistAnalogClock</string>
+    <string name="configure">Configs</string>
+    <string name="add_widget">Add widget</string>
+    <string name="color_of_hour_dots">Color of hour dots</string>
+    <string name="title_activity_main">MainActivity</string>
+
+
+</resources>
