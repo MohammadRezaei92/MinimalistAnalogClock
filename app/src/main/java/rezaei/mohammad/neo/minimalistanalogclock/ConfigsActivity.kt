@@ -1,4 +1,4 @@
-package ir.co.yalda.minimalistanalogclock
+package rezaei.mohammad.neo.minimalistanalogclock
 
 import android.app.Activity
 import android.appwidget.AppWidgetManager

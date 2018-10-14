@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="ir.co.yalda.minimalistanalogclock">
+    package="rezaei.mohammad.neo.minimalistanalogclock">
 
     <application
         android:allowBackup="true"
@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <receiver
-            android:name=".AnalogClass"
+            android:name="rezaei.mohammad.neo.minimalistanalogclock.AnalogClass"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -27,7 +27,7 @@
         </receiver>
 
         <activity
-            android:name=".ConfigsActivity"
+            android:name="rezaei.mohammad.neo.minimalistanalogclock.ConfigsActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />

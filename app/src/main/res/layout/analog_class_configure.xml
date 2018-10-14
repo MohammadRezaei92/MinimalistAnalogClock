@@ -7,11 +7,21 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background">
 
-    <ir.co.yalda.minimalistanalogclock.Clock
+    <rezaei.mohammad.neo.minimalistanalogclock.Clock
         android:id="@+id/clock"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        app:hourDotColor="@color/light_blue"
+        app:minuteDotColor="@color/white"
+        app:handsColor="@color/white"
+        app:secondDotColor="@color/red"
+        app:showDate="true"
+        app:showSecond="true"
+        app:datePrimaryColor="@color/white"
+        app:dateSecondaryColor="@color/black"
+        app:centerCirclePrimaryColor="@color/blue_grey"
+        app:centerCircleSecondaryColor="@color/red" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -46,7 +56,7 @@
                 android:text="Hour dots color" />
 
 
-            <ir.co.yalda.minimalistanalogclock.ColorSeekBar
+            <rezaei.mohammad.neo.minimalistanalogclock.ColorSeekBar
                 android:id="@+id/pickerHourDotColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,7 +73,7 @@
                 android:textColor="?android:textColorPrimary"
                 android:text="Minute dots color" />
 
-            <ir.co.yalda.minimalistanalogclock.ColorSeekBar
+            <rezaei.mohammad.neo.minimalistanalogclock.ColorSeekBar
                 android:id="@+id/pickerMinuteDotColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -80,7 +90,7 @@
                 android:textColor="?android:textColorPrimary"
                 android:text="Hands color" />
 
-            <ir.co.yalda.minimalistanalogclock.ColorSeekBar
+            <rezaei.mohammad.neo.minimalistanalogclock.ColorSeekBar
                 android:id="@+id/pickerHandsColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -97,7 +107,7 @@
                 android:textColor="?android:textColorPrimary"
                 android:text="Second dot color" />
 
-            <ir.co.yalda.minimalistanalogclock.ColorSeekBar
+            <rezaei.mohammad.neo.minimalistanalogclock.ColorSeekBar
                 android:id="@+id/pickerSecondDotColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -114,7 +124,7 @@
                 android:textColor="?android:textColorPrimary"
                 android:text="Date primary color" />
 
-            <ir.co.yalda.minimalistanalogclock.ColorSeekBar
+            <rezaei.mohammad.neo.minimalistanalogclock.ColorSeekBar
                 android:id="@+id/pickerDatePrimaryColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -131,7 +141,7 @@
                 android:textColor="?android:textColorPrimary"
                 android:text="Date secondary color" />
 
-            <ir.co.yalda.minimalistanalogclock.ColorSeekBar
+            <rezaei.mohammad.neo.minimalistanalogclock.ColorSeekBar
                 android:id="@+id/pickerDateSecondaryColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -148,7 +158,7 @@
                 android:textColor="?android:textColorPrimary"
                 android:text="Center circle primary color" />
 
-            <ir.co.yalda.minimalistanalogclock.ColorSeekBar
+            <rezaei.mohammad.neo.minimalistanalogclock.ColorSeekBar
                 android:id="@+id/pickerCenterCirclePrimaryColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -165,7 +175,7 @@
                 android:textColor="?android:textColorPrimary"
                 android:text="Center circle secondary color" />
 
-            <ir.co.yalda.minimalistanalogclock.ColorSeekBar
+            <rezaei.mohammad.neo.minimalistanalogclock.ColorSeekBar
                 android:id="@+id/pickerCenterCircleSecondaryColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

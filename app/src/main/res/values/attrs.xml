@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="mac">
+    <declare-styleable name="Clock">
         <attr name="hourDotColor" format="reference|color" />
         <attr name="minuteDotColor" format="reference|color" />
         <attr name="handsColor" format="reference|color" />

@@ -1,4 +1,4 @@
-package ir.co.yalda.minimalistanalogclock
+package rezaei.mohammad.neo.minimalistanalogclock
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -16,7 +16,6 @@ import java.util.Calendar
 import java.util.Locale
 import kotlin.math.absoluteValue
 import kotlin.math.pow
-import kotlin.math.sign
 
 
 internal class Clock : View {
@@ -93,19 +92,19 @@ internal class Clock : View {
 
     @SuppressLint("Recycle")
     private fun handleAttr(context: Context, attrs: AttributeSet?){
-        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.mac, 0, 0)
+        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.Clock, 0, 0)
 
         try {
-            hourDotColor = typedArray.getColor(R.styleable.mac_hourDotColor,Color.parseColor("#53cfff"))
-            minuteDotColor = typedArray.getColor(R.styleable.mac_minuteDotColor,Color.WHITE)
-            handsColor = typedArray.getColor(R.styleable.mac_handsColor,Color.WHITE)
-            secondDotColor = typedArray.getColor(R.styleable.mac_secondDotColor,Color.parseColor("#fe6f70"))
-            showDate = typedArray.getBoolean(R.styleable.mac_showDate,true)
-            showSecond = typedArray.getBoolean(R.styleable.mac_showSecond,true)
-            datePrimaryColor = typedArray.getColor(R.styleable.mac_datePrimaryColor,Color.WHITE)
-            dateSecondaryColor = typedArray.getColor(R.styleable.mac_dateSecondaryColor,Color.argb(120,0,0,0))
-            centerCirclePrimaryColor = typedArray.getColor(R.styleable.mac_centerCirclePrimaryColor,Color.parseColor("#0e5876"))
-            centerCircleSecondaryColor = typedArray.getColor(R.styleable.mac_centerCircleSecondaryColor,Color.parseColor("#fe6f70"))
+            hourDotColor = typedArray.getColor(R.styleable.Clock_hourDotColor,Color.parseColor("#53cfff"))
+            minuteDotColor = typedArray.getColor(R.styleable.Clock_minuteDotColor,Color.WHITE)
+            handsColor = typedArray.getColor(R.styleable.Clock_handsColor,Color.WHITE)
+            secondDotColor = typedArray.getColor(R.styleable.Clock_secondDotColor,Color.parseColor("#fe6f70"))
+            showDate = typedArray.getBoolean(R.styleable.Clock_showDate,true)
+            showSecond = typedArray.getBoolean(R.styleable.Clock_showSecond,true)
+            datePrimaryColor = typedArray.getColor(R.styleable.Clock_datePrimaryColor,Color.WHITE)
+            dateSecondaryColor = typedArray.getColor(R.styleable.Clock_dateSecondaryColor,Color.argb(120,0,0,0))
+            centerCirclePrimaryColor = typedArray.getColor(R.styleable.Clock_centerCirclePrimaryColor,Color.parseColor("#0e5876"))
+            centerCircleSecondaryColor = typedArray.getColor(R.styleable.Clock_centerCircleSecondaryColor,Color.parseColor("#fe6f70"))
         } catch (e: Exception) {
             e.printStackTrace()
         } finally {
@@ -118,7 +117,8 @@ internal class Clock : View {
         mCalendar = calendar
         RADIUS = Math.min(WIDTH,HEIGHT) / 2
         getTime()
-        Handler().postDelayed({ init(Calendar.getInstance()) }, 500)
+        if(!isInEditMode)
+            Handler().postDelayed({ init(Calendar.getInstance()) }, 500)
     }
 
     /**
@@ -216,7 +216,7 @@ internal class Clock : View {
             paint.isFakeBoldText = true
             val typeface = ResourcesCompat.getFont(mContext, R.font.k2d)
             paint.typeface = typeface
-            val DISTANCE_FROM_BOTTM = 60.times(SCALE)
+            val distanceFromBottom = 60.times(SCALE)
             //Draw year
             paint.color = datePrimaryColor
             val yearSize = Rect()
@@ -224,7 +224,7 @@ internal class Clock : View {
             paint.textSize = 25f.times(SCALE)
             paint.getTextBounds(yearName, 0, yearName.length, yearSize)
             val yearX = WIDTH.times(SCALE) / 2 - yearSize.width() / 2 - yearSize.left
-            val yearY = HEIGHT.times(SCALE) - DISTANCE_FROM_BOTTM
+            val yearY = HEIGHT.times(SCALE) - distanceFromBottom
             canvas.drawText(yearName, yearX, yearY, paint)
             //Draw day
             paint.color = dateSecondaryColor
@@ -233,17 +233,16 @@ internal class Clock : View {
             paint.textSize = 35f.times(SCALE)
             paint.getTextBounds(dayName, 0, dayName.length, daySize)
             val dayX = WIDTH.times(SCALE) / 2 - daySize.width() / 2 - daySize.left
-            val dayY = HEIGHT.times(SCALE) - DISTANCE_FROM_BOTTM - yearSize.height() - 10
+            val dayY = HEIGHT.times(SCALE) - distanceFromBottom - yearSize.height() - 10
             canvas.drawText(dayName, dayX, dayY, paint)
             //Draw Month
             paint.color = datePrimaryColor
-            paint.alpha = 255
             val monthSize = Rect()
             val monthName = mCalendar.getDisplayName(Calendar.MONTH, Calendar.SHORT, Locale.US).toUpperCase()
             paint.textSize = 25f.times(SCALE)
             paint.getTextBounds(monthName, 0, monthName.length, monthSize)
             val monthX = WIDTH.times(SCALE) / 2 - monthSize.width() / 2 - monthSize.left
-            val monthY = HEIGHT.times(SCALE) - DISTANCE_FROM_BOTTM - (daySize.height() + yearSize.height()) - 20
+            val monthY = HEIGHT.times(SCALE) - distanceFromBottom - (daySize.height() + yearSize.height()) - 20
             canvas.drawText(monthName, monthX, monthY, paint)
         }
 
@@ -306,8 +305,8 @@ internal class Clock : View {
      * @param radius The radius length
      * @return the coordinates point
      */
-    var xIsPos = true
-    var yIsPos = true
+    private var xIsPos = true
+    private var yIsPos = true
     private fun minToLocation(timeStep: Int, radius: Int): Point {
         val t =  2.0 * Math.PI * (timeStep - 15).toDouble() / 60
         when (timeStep) {
